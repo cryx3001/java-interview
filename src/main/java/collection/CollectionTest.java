@@ -36,7 +36,14 @@ class CollectionTest {
      * operation : abc -> AbcAbc
      */
     public static List<String> compute2(List<String> input) {
-        return null;
+        return input
+                .stream()
+                .map(x -> {
+                    if (x.length() == 0)
+                        return "";
+                    String res = x.substring(0,1).toUpperCase() + x.substring(1);
+                    return res + res;
+                })
+                .collect(Collectors.toList());
     }
-
 }

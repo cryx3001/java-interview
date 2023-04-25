@@ -15,6 +15,8 @@ class CollectionTestSpec extends AnyFlatSpec with Matchers {
   "The Collection test" should "compute some value for second method" in {
     CollectionTest.compute2(List().asJava) shouldEqual List().asJava
     CollectionTest.compute2(List("abc").asJava) shouldEqual List("AbcAbc").asJava
+    CollectionTest.compute2(List("0bc").asJava) shouldEqual List("0bc0bc").asJava
+    CollectionTest.compute2(List("a").asJava) shouldEqual List("AA").asJava
     CollectionTest.compute2(List("Abc").asJava) shouldEqual List("AbcAbc").asJava
     CollectionTest.compute2(List("").asJava) shouldEqual List("").asJava
     CollectionTest.compute2(List("sldkfj sdflkjs sdf").asJava) shouldEqual List("Sldkfj sdflkjs sdfSldkfj sdflkjs sdf").asJava
