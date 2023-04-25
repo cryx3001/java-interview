@@ -11,6 +11,14 @@ class AsyncTestSpec extends AnyFlatSpec with Matchers {
 
     Tuple.of(None, None) shouldEqual Tuple.of(None, None)
 
+    AsyncTest.getCeoById("12").get().toString() shouldEqual "None"
+    AsyncTest.getCeoById("ceo_1").get().toString() shouldEqual "Some(Ceo_Mark)"
+    AsyncTest.getCeoById("ceo_3").get().toString() shouldEqual "Some(Ceo_Bill)"
+
+    AsyncTest.getEnterpriseByCeoId("12").get().toString() shouldEqual "None"
+    AsyncTest.getEnterpriseByCeoId("ceo_1").get().toString() shouldEqual "Some(Enterprise_Facebook)"
+    AsyncTest.getEnterpriseByCeoId("ceo_3").get().toString() shouldEqual "None"
+
     val result1 = AsyncTest.getCEOAndEnterprise("12").get()
     result1.toString() shouldEqual "(None, None)"
 

@@ -20,5 +20,6 @@ class CollectionTestSpec extends AnyFlatSpec with Matchers {
     CollectionTest.compute2(List("Abc").asJava) shouldEqual List("AbcAbc").asJava
     CollectionTest.compute2(List("").asJava) shouldEqual List("").asJava
     CollectionTest.compute2(List("sldkfj sdflkjs sdf").asJava) shouldEqual List("Sldkfj sdflkjs sdfSldkfj sdflkjs sdf").asJava
+    CollectionTest.compute2(List("this is ", "my ", "1st ", "super ", "", "cool", " test", " !!!!").asJava) shouldEqual List("This is This is ", "My My ", "1st 1st ", "Super Super ", "", "CoolCool", " test test", " !!!! !!!!").asJava
   }
 }
