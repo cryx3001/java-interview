@@ -10,18 +10,21 @@ import java.util.stream.Collectors;
  */
 class CollectionTest {
 
-
+    // Power method, just in case we're not allowed to use Math.pow
     public static double power(double i, double n) {
         if (n == 0)
             return 1;
+
         double res = 1;
-        for (double j = 1; j < n / 2; j++)
+        // i^(n//2)
+        for (double j = 1; j <= n / 2; j++)
             res *= i;
-        res *= res;
+        res *= res; // i^(n//2) * i^(n//2)
         if (n % 2 == 1)
-            res *= i;
+            res *= i; // i^(n//2) * i^(n//2) * i
         return res;
     }
+
     /**
      * operation : x -> ((x * 2) + 3) ^ 5
      */
