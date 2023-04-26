@@ -22,6 +22,9 @@ public class BasicTest {
         int res = 1;
         for (int j = 1; j <= n; j++)
         {
+            // Since we are not allowed to use the Math library, this trick
+            // check for overflows
+            // But we should use Math.exactMultiply
             if (res > Integer.MAX_VALUE / i) // ==> res * i > Integer.MAX_VALUE ==> Overflow!
                 return Option.none();
             res *= i;
